@@ -8,6 +8,7 @@ spec:
   template:
     spec:
       files:
+      #@overlay/append
       - path: C:\k\register_antrea_cleanup.ps1
         content: |
           $methodScript = "C:\k\antrea\Clean-AntreaNetwork.ps1"
@@ -50,6 +51,7 @@ spec:
               }
           }
       postKubeadmCommands:
+      #@overlay/append
       - powershell C:/k/register_antrea_cleanup.ps1 -ExecutionPolicy Bypass
 #@ end
 #@ end
